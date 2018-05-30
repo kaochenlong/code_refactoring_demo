@@ -1,3 +1,25 @@
+class RegularPrice
+  def charge(days_rented)
+    result = 2
+    result += (days_rented - 2) * 1.5 if days_rented > 2
+    result
+  end
+end
+
+class NewReleasePrice
+  def charge(days_rented)
+    days_rented * 3
+  end
+end
+
+class ChildrenPrice
+  def charge(days_rented)
+    result = 1.5
+    result += (days_rented - 3) * 1.5 if days_rented > 3
+    result
+  end
+end
+
 class Movie
   REGULAR     = 0     # 普通片
   NEW_RELEASE = 1     # 新片
