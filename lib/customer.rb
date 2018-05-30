@@ -24,8 +24,8 @@ class Customer
       end
 
       # 顯示此筆租借資料
-      result += "\t" + rental.movie.title + "\t" + amount_for(rental).to_s + "\n"
-      total_amount += amount_for(rental)
+      result += "\t" + rental.movie.title + "\t" + rental.charge.to_s + "\n"
+      total_amount += rental.charge
     end
 
     # 結尾列印
@@ -35,7 +35,4 @@ class Customer
   end
 
   private
-  def amount_for(rental)
-    rental.charge
-  end
 end
