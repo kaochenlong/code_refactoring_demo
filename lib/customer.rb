@@ -30,11 +30,6 @@ class Customer
 
   private
   def total_charge
-    result = 0
-    @rentals.each do |rental|
-      result += rental.charge
-    end
-
-    result
+    @rentals.reduce(0) { |sum, rental| sum + rental.charge }
   end
 end
