@@ -17,11 +17,7 @@ class Customer
 
     @rentals.each do |rental|
       # 累加常客積點
-      frequent_renter_points += 1
-      # 如果是新片而且租超過 1 天，另外加 1 點
-      if rental.movie.price_code == Movie::NEW_RELEASE && rental.days_rented > 1
-        frequent_renter_points += 1
-      end
+      frequent_renter_points += rental.frequent_renter_points
 
       # 顯示此筆租借資料
       result += "\t" + rental.movie.title + "\t" + rental.charge.to_s + "\n"
