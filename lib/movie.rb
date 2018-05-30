@@ -1,3 +1,9 @@
+module DefaultPrice
+  def frequent_renter_points(days_rented)
+    1
+  end
+end
+
 class RegularPrice
   def charge(days_rented)
     result = 2
