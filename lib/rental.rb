@@ -10,7 +10,6 @@ class Rental
   end
 
   def frequent_renter_points
-    # 如果是新片而且租超過 1 天，另外加 1 點
-    (movie.price_code == Movie::NEW_RELEASE && days_rented > 1) ? 2 : 1
+    movie.frequent_renter_points(days_rented)
   end
 end
